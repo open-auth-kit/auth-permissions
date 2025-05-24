@@ -1,0 +1,71 @@
+{
+  "name": "@open-auth-kit/auth-permissions",
+  "version": "0.0.1",
+  "description": "NestJS RBAC permissions plugin",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "type": "commonjs",
+  "files": [
+    "dist/**/*"
+  ],
+  "peerDependencies": {
+    "@nestjs/common": "^11.1.0",
+    "@nestjs/core": "^11.1.0"
+  },
+  "scripts": {
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "pnpm run build:cjs && pnpm run build:esm",
+    "docs": "typedoc",
+    "lint": "eslint \"src/**/*.ts\" --report-unused-disable-directives",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "prepare": "npm run build"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-auth-kit/auth-permissions.git"
+  },
+  "keywords": [
+    "nestjs",
+    "auth",
+    "jwt",
+    "permissions",
+    "rbac"
+  ],
+  "author": "Kim Valentin",
+  "bugs": {
+    "url": "https://github.com/open-auth-kit/auth-permissions/issues"
+  },
+  "homepage": "https://github.com/open-auth-kit/auth-permissions#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.3",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
+    "eslint": "^9.25.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2",
+    "typedoc": "^0.28.3",
+    "typedoc-plugin-markdown": "^4.6.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@8.6.3",
+  "publishConfig": {
+    "access": "public"
+  }
+}
